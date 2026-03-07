@@ -13,3 +13,8 @@ This will all be sent over through email so you can analyze your own personal fi
 
 
 02/20 good to go
+03/06 
+
+- Figure out how to do the USB
+- Make emails a bit more generic and don't hardcode stuff, it makes it easier to track you
+- Look at Win+R? 
