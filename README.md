@@ -17,4 +17,5 @@ This will all be sent over through email so you can analyze your own personal fi
 
 - Figure out how to do the USB
 - Make emails a bit more generic and don't hardcode stuff, it makes it easier to track you
-- Look at Win+R? 
+- Look at Win+R?
+- Send an email every hour with keystrokes. Then remove the key.txt file and rerun your script automatically. 
