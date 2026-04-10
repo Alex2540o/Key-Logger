@@ -1,8 +1,16 @@
+import os
+import sys
 import platform # Get system info (for sys_info)
 import socket # Get network info (for sys_info)
 import getpass # Get username (for sys_info)
 
-sys_info = "sys_info.txt"
+
+def get_base_dir():
+    if getattr(sys, "frozen", False):
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
+sys_info = os.path.join(get_base_dir(), "sys_info.txt")
 
 #Function to log system information
 def system_information():
@@ -13,4 +21,4 @@ def system_information():
         logSys.write(f"Processor: {platform.processor()}\n")
         logSys.write(f"Hostname: {socket.gethostname()}\n")
         logSys.write(f"IP Address: {socket.gethostbyname(socket.gethostname())}\n")
-        logSys.write(f"Username: {getpass.getuser()}\n") # everything from line 28 to 34 is for system information, look at the name to see what it will capture...
+        logSys.write(f"Username: {getpass.getuser()}\n") # everything from line 10 to 16 is for system information, look at the name to see what it will capture...

